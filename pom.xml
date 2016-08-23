@@ -11,6 +11,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<springversion>3.1.1.RELEASE</springversion>
 		<junitversion>3.8.1</junitversion>
+		<mybatis.version>3.2.2</mybatis.version>
+		<mybatis.spring.version>1.2.2</mybatis.spring.version>
+		<mysql.connector.version>5.1.30</mysql.connector.version>
+		<druid.version>1.0.5</druid.version>
+		<cglib.version>3.1</cglib.version>
 	</properties>
 
 	<dependencies>
@@ -20,6 +25,8 @@
 			<version>${junitversion}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- springframe start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
@@ -132,6 +139,9 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		<!-- springframe end -->
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -153,8 +163,68 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.16</version>
 		</dependency>
+
+		<!-- mybatis start -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis.spring.version}</version>
+		</dependency>
+		<!--mybatis end -->
+
+		<!-- mysql-connector -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
+
+		<!-- DruidDataSource -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+
+		<!-- cglib -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+
 	</dependencies>
 
+	<!-- 安装mybatis generator插件 start -->
+	<build>
+		<finalName>maven</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>
+					<overwrite>true</overwrite>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.connector.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- 安装mybatis generator插件 end -->
 
 
 </project>
