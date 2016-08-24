@@ -27,8 +27,7 @@ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
 		</commentGenerator>
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/test" 
-			userId="test"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/test" userId="test"
 			password="test">
 		</jdbcConnection>
 
@@ -39,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
 		</javaTypeResolver>
 
 		<!-- javaModelGenerator是模型的生成信息，这里将指定这些Java model类的生成路径； -->
-		<javaModelGenerator targetPackage="com.test.test.entity"
+		<javaModelGenerator targetPackage="com.test.test.bean"
 			targetProject="/Users/wangmin/Code/workspace/core/src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -59,7 +58,7 @@ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
 
 		<!-- table是用户指定的被生成相关信息的表，它必须在指定的jdbc连接中已经被建立。?是否可以多个 -->
 
-		<table tableName="employee" domainObjectName="Employee"
+		<table tableName="employee" domainObjectName="EmployeeDto"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false"></table>

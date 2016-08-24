@@ -6,14 +6,14 @@ public interface EmployeeDao {
 
 	int deleteByPrimaryKey(Long id);
 
-    int insert(EmployeeDto record);
+	int insert(EmployeeDto record);
 
-    int insertSelective(EmployeeDto record);
+	int insertSelective(EmployeeDto record);
 
-    EmployeeDto selectByPrimaryKey(Long id);
+	EmployeeDto selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(EmployeeDto record);
+	int updateByPrimaryKeySelective(EmployeeDto record);
 
-    int updateByPrimaryKey(EmployeeDto record);
+	int updateByPrimaryKey(EmployeeDto record);
 
 }

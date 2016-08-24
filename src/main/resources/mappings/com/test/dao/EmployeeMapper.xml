@@ -12,7 +12,7 @@
 	<sql id="Base_Column_List">
 		id, name, sex, age, department, salary
 	</sql>
-	<select id="selectByPrimaryKey" resultType="com.test.bean.EmployeeDto"
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Long">
 		select
 		<include refid="Base_Column_List" />

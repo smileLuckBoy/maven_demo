@@ -15,17 +15,16 @@ import com.test.utilty.HttpUtils;
 @Controller
 @RequestMapping("/emplayee.do")
 public class EmployeeInfoControl {
-	
+
 	@Autowired
 	EmployeeService employeeService;
-	
-	
+
 	@RequestMapping(params = "method=showEmplayeeInfo")
 	public void showEmplayeeInfo(HttpServletRequest request, HttpServletResponse response, EmployeeDto dto) {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>我进controller了");
 		long id = Long.parseLong("3");
 		EmployeeDto employee = employeeService.getEmployeeById(id);
-		
+
 		HttpUtils.writeToPage(response, JSONObject.toJSONString(employee));
 
 	}
