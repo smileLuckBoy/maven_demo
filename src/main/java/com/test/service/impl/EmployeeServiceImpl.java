@@ -20,8 +20,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public EmployeeDto getEmployeeById(Long id) {
 		logger.info("start method : {} param id : {}","getEmployeeById",id);
-		int a = 1;
-		int b = a / 0;
 		return employeeDto.selectByPrimaryKey(id);
 	}
 }
