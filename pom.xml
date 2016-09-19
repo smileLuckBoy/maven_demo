@@ -34,7 +34,7 @@
 
 
 	<build>
-		<finalName>core</finalName>
+		<finalName>maven</finalName>
 		<plugins>
 			<!-- 安装mybatis generator插件 -->
 			<plugin>
